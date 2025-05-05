@@ -16,7 +16,7 @@ A C++ command-line application for securely encrypting and decrypting files or t
 - **Language**: C++
 - **Library**: OpenSSL (libssl, libcrypto)
 - **Platform**: Linux (developed on Kali Linux)
-- **Tools**: g++, Git
+- **Tools**: g++, Git, GitCLI
 
 ## Prerequisites
 
