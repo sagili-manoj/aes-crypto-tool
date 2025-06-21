@@ -144,6 +144,14 @@ A robust and scalable C++ command-line tool for secure data and file encryption/
 # File decrypted to: test_decrypted_file.txt
 # Test 2 passed: Decrypted file content matches original! with Ubuntu and other distributions.
 
+```
+#Example Outputs:
+![Screenshot 2025-06-21 140105](https://github.com/user-attachments/assets/9deb02c1-7112-4de2-bea6-c7a2deb2910c)
+![Screenshot 2025-06-21 140140](https://github.com/user-attachments/assets/3c2221b1-d0ad-4863-b8ef-83aedf15fb70)
+![Screenshot 2025-06-21 140250](https://github.com/user-attachments/assets/5c2e4777-55a7-4d99-8a84-250d3811b1dc)
+![Screenshot 2025-06-21 140442](https://github.com/user-attachments/assets/5e41b812-8e95-4361-b005-f962f3cbd94a)
+
+
 Install dependencies on Ubuntu/Kali:
 
 ```bash
@@ -152,3 +160,4 @@ sudo apt install libssl-dev g++
 
 git clone https://github.com/sagili-manoj/aes-crypto-tool
 cd aes-crypto-tool
+```
