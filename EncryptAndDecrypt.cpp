@@ -196,8 +196,7 @@ void AES_File_Process(const std::string& inputFile, const std::string& outputFil
         inFile.close();
         throw std::runtime_error("Error opening output file: " + outputFile);
     }
-
-    // Check input file size
+    
     inFile.seekg(0, std::ios::end);
     std::streamsize inputSize = inFile.tellg();
     inFile.seekg(0, std::ios::beg);
@@ -229,7 +228,7 @@ void AES_File_Process(const std::string& inputFile, const std::string& outputFil
             throw std::runtime_error("Failed to generate random IV.");
         }
         outFile.write(reinterpret_cast<char*>(iv), AES_BLOCK_SIZE);
-        outFile.flush(); // Ensure IV is written
+        outFile.flush();
         printHex("Generated IV (for file)", iv, AES_BLOCK_SIZE);
         if (EVP_EncryptInit_ex(ctx.get(), cipher, nullptr, (const unsigned char*)key.c_str(), iv) != 1) {
             printOpenSSLErrors("Error initializing encryption");
@@ -271,7 +270,7 @@ void AES_File_Process(const std::string& inputFile, const std::string& outputFil
             }
             if (outLen > 0) {
                 outFile.write(reinterpret_cast<char*>(outBuffer), outLen);
-                outFile.flush(); // Ensure data is written
+                outFile.flush();
                 if (!outFile) {
                     throw std::runtime_error("Error writing to output file: " + outputFile);
                 }
@@ -297,7 +296,7 @@ void AES_File_Process(const std::string& inputFile, const std::string& outputFil
     }
     if (finalLen > 0) {
         outFile.write(reinterpret_cast<char*>(outBuffer), finalLen);
-        outFile.flush(); // Ensure final data is written
+        outFile.flush();
         if (!outFile) {
             throw std::runtime_error("Error writing final bytes to output file: " + outputFile);
         }
@@ -362,7 +361,7 @@ void XOR_File(const std::string& inputFile, const std::string& outputFile, const
     if (!out) {
         throw std::runtime_error("Error writing final bytes to output file during XOR processing: " + outputFile);
     }
-    std::cout << "File processing complete!                         " << std::endl;
+    std::cout << "File processing complete!                      " << std::endl;
 
     in.close();
     out.close();
